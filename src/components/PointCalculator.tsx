@@ -132,7 +132,7 @@ export const PointCalculator = () => {
                       <SelectValue placeholder="Select level" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">None</SelectItem>
+                      <SelectItem value="none">None</SelectItem>
                       <SelectItem value="A1">A1 (1 point)</SelectItem>
                       <SelectItem value="A2">A2 (1 point)</SelectItem>
                       <SelectItem value="B1">B1 (2 points)</SelectItem>
@@ -149,7 +149,7 @@ export const PointCalculator = () => {
                       <SelectValue placeholder="Select level" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">None</SelectItem>
+                      <SelectItem value="none">None</SelectItem>
                       <SelectItem value="B1">B1 (1 point)</SelectItem>
                       <SelectItem value="B2">B2 (1 point)</SelectItem>
                       <SelectItem value="C1">C1 (2 points)</SelectItem>
@@ -171,7 +171,7 @@ export const PointCalculator = () => {
                   <SelectValue placeholder="Select qualification" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">None</SelectItem>
+                  <SelectItem value="none">None</SelectItem>
                   <SelectItem value="vocational">
                     Vocational Training (2 points)
                   </SelectItem>
@@ -190,7 +190,7 @@ export const PointCalculator = () => {
                   <SelectValue placeholder="Select experience" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">Less than 3 years</SelectItem>
+                  <SelectItem value="less-than-3">Less than 3 years</SelectItem>
                   <SelectItem value="3-5">3-5 years (1 point)</SelectItem>
                   <SelectItem value="5+">Over 5 years (2 points)</SelectItem>
                 </SelectContent>

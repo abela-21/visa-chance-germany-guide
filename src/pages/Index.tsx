@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { Requirements } from "@/components/Requirements";
 import { Benefits } from "@/components/Benefits";
 import { PointCalculator } from "@/components/PointCalculator";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
       <Requirements />
       <Benefits />
       <PointCalculator />
+      <ContactForm />
       <Footer />
     </div>
   );

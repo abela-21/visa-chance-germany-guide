@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -31,6 +35,13 @@ export default {
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
+				},
+				german: {
+					black: '#000000',
+					red: '#DD0000',
+					gold: '#FFCE00',
+					light: '#F8F9FA',
+					dark: '#212529'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',

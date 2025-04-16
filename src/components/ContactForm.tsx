@@ -59,7 +59,7 @@ export const ContactForm = () => {
       englishLanguage: "none",
       qualification: "none",
       fieldOfStudy: "",
-      workExperience: "less-than-3",
+      workExperience: "0-3",
       workField: "",
       shortageOccupation: "no",
       euConnection: "no",
@@ -328,7 +328,7 @@ export const ContactForm = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="less-than-3">Less than 3 years</SelectItem>
+                            <SelectItem value="0-3">0-3 years</SelectItem>
                             <SelectItem value="3-5">3-5 years</SelectItem>
                             <SelectItem value="5+">Over 5 years</SelectItem>
                           </SelectContent>

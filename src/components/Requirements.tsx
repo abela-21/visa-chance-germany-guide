@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { CheckCircle2, FileText, Languages, Clock, Award, Landmark } from "lucide-react";
+import { CheckCircle2, FileText, Languages, Clock, Award, Landmark, Heart } from "lucide-react";
 
 export const Requirements = () => {
   const requirements = [
@@ -28,6 +28,11 @@ export const Requirements = () => {
       title: "Financial Resources",
       description: "Proof of sufficient financial means to support yourself during your stay",
       icon: Landmark
+    },
+    {
+      title: "Health Insurance",
+      description: "Coverage for the entire duration of your stay in Germany",
+      icon: Heart
     }
   ];
 
@@ -35,9 +40,9 @@ export const Requirements = () => {
     <section id="requirements" className="py-16 bg-german-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">Visa Requirements</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">Option 2: Point System</h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            To qualify for the German Opportunity Card, you must meet certain criteria and achieve at least 6 points
+            To qualify for the German Opportunity Card via the Point System, you must meet certain criteria and achieve at least 6 points
             across different categories.
           </p>
         </div>

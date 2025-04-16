@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
@@ -17,9 +16,12 @@ export const Header = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6">
+          <Link to="/#skilled-worker" className="font-medium hover:text-german-red transition-colors">
+            Skilled Worker
+          </Link>
           <Link to="/#requirements" className="font-medium hover:text-german-red transition-colors">
-            Requirements
+            Point System
           </Link>
           <Link to="/#benefits" className="font-medium hover:text-german-red transition-colors">
             Benefits
@@ -46,11 +48,18 @@ export const Header = () => {
         <nav className="md:hidden py-4 px-4 bg-white border-t">
           <div className="flex flex-col space-y-3">
             <Link 
+              to="/#skilled-worker" 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Skilled Worker
+            </Link>
+            <Link 
               to="/#requirements" 
               className="font-medium px-4 py-2 hover:bg-gray-100 rounded"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Requirements
+              Point System
             </Link>
             <Link 
               to="/#benefits" 

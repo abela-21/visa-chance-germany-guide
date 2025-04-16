@@ -3,6 +3,13 @@ import { ArrowDown } from "lucide-react";
 import { Button } from "./ui/button";
 
 export const Hero = () => {
+  const scrollToSkilledWorker = () => {
+    const skilledWorkerSection = document.getElementById("skilled-worker");
+    if (skilledWorkerSection) {
+      skilledWorkerSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const scrollToCalculator = () => {
     const calculatorSection = document.getElementById("calculator");
     if (calculatorSection) {
@@ -27,7 +34,7 @@ export const Hero = () => {
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-lg">
               Expert consultancy services to guide you through the entire application process. 
-              Let our specialists maximize your chances of success.
+              Choose between the Skilled Worker route or the Point System option.
             </p>
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-8">
               <p className="font-medium text-gray-800 mb-2">Our consultancy packages start from:</p>
@@ -39,14 +46,23 @@ export const Hero = () => {
                 variant="default" 
                 size="lg"
                 className="bg-german-red hover:bg-red-700 text-white"
-                onClick={scrollToCalculator}
+                onClick={scrollToSkilledWorker}
               >
-                Check Your Eligibility
+                Skilled Worker Route
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
+                onClick={scrollToCalculator}
+              >
+                Point System Option
+              </Button>
+            </div>
+            <div className="mt-4">
+              <Button 
+                variant="link" 
                 onClick={scrollToContact}
+                className="text-german-red"
               >
                 Request Consultation
               </Button>

@@ -1,6 +1,7 @@
 
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { Description } from "@/components/Description";
 import { SkilledWorker } from "@/components/SkilledWorker";
 import { Requirements } from "@/components/Requirements";
 import { Benefits } from "@/components/Benefits";
@@ -13,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <Hero />
+      <Description />
       <div className="options-container">
         <SkilledWorker />
         <Requirements />

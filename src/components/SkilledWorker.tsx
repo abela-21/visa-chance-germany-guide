@@ -46,7 +46,7 @@ export const SkilledWorker = () => {
           <div className="lg:w-1/2">
             <div className="aspect-video bg-gray-100 rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
                 alt="Professional working in Germany" 
                 className="w-full h-full object-cover"
               />

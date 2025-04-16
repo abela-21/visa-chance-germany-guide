@@ -17,10 +17,10 @@ export const Hero = () => {
     }
   };
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+  const scrollToBenefits = () => {
+    const benefitsSection = document.getElementById("benefits");
+    if (benefitsSection) {
+      benefitsSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -61,7 +61,7 @@ export const Hero = () => {
             <div className="mt-4">
               <Button 
                 variant="link" 
-                onClick={scrollToContact}
+                onClick={scrollToBenefits}
                 className="text-german-red"
               >
                 Request Consultation
@@ -82,7 +82,7 @@ export const Hero = () => {
         </div>
         
         <div className="mt-16 flex justify-center">
-          <a href="#requirements" className="flex flex-col items-center text-gray-600 hover:text-german-red transition-colors animate-bounce">
+          <a href="#benefits" className="flex flex-col items-center text-gray-600 hover:text-german-red transition-colors animate-bounce">
             <p className="mb-2">Learn More</p>
             <ArrowDown size={24} />
           </a>

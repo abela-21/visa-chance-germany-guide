@@ -25,7 +25,7 @@ import {
 } from "./ui/select";
 import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Label } from "./ui/label";
-import { Mail, Phone, User, Calendar, Send, Briefcase, Book, GraduationCap, Globe } from "lucide-react";
+import { Mail, Phone, User, Calendar, Send, Briefcase, Book, GraduationCap, Globe, CheckCircle2 } from "lucide-react";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -40,6 +40,7 @@ const contactFormSchema = z.object({
   workField: z.string().optional(),
   shortageOccupation: z.string(),
   euConnection: z.string(),
+  consultancyPackage: z.string(),
   message: z.string().min(10, "Please provide more details about your inquiry"),
 });
 
@@ -63,13 +64,14 @@ export const ContactForm = () => {
       workField: "",
       shortageOccupation: "no",
       euConnection: "no",
+      consultancyPackage: "standard",
       message: "",
     },
   });
 
   const onSubmit = (values: ContactFormValues) => {
     console.log(values);
-    toast.success("Your message has been sent! We'll contact you soon.");
+    toast.success("Your consultation request has been sent! Our experts will contact you soon.");
     form.reset();
     setSubmitted(true);
   };
@@ -86,24 +88,41 @@ export const ContactForm = () => {
         <div className="container mx-auto px-4">
           <Card className="max-w-2xl mx-auto">
             <CardHeader>
-              <CardTitle>Thank You!</CardTitle>
+              <CardTitle>Thank You for Your Interest!</CardTitle>
               <CardDescription>
-                We've received your message and will get back to you shortly.
+                Your consultation request has been received.
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center py-6">
-              <Send className="h-16 w-16 mx-auto text-german-red mb-4" />
+              <CheckCircle2 className="h-16 w-16 mx-auto text-green-500 mb-4" />
               <p className="text-gray-700 my-4">
-                Our team will review your information and contact you with personalized
-                guidance for your Opportunity Card application.
+                One of our Opportunity Card consultants will review your information and contact you 
+                within 24 hours to discuss your application and our service packages.
               </p>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-6 max-w-md mx-auto">
+                <p className="font-medium text-center mb-2">What happens next?</p>
+                <ul className="text-sm text-left space-y-2">
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-german-red mr-2" />
+                    Our experts will analyze your profile
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-german-red mr-2" />
+                    We'll prepare a personalized consultation plan
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle2 className="h-4 w-4 text-german-red mr-2" />
+                    You'll receive a detailed quote based on your needs
+                  </li>
+                </ul>
+              </div>
             </CardContent>
             <CardFooter>
               <Button 
                 className="w-full bg-german-red hover:bg-red-700"
                 onClick={() => setSubmitted(false)}
               >
-                Send Another Message
+                Send Another Request
               </Button>
             </CardFooter>
           </Card>
@@ -117,19 +136,19 @@ export const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-montserrat mb-4">
-            Contact Us
+            Request a Consultation
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Have questions about the Opportunity Card? Fill out the form below and our 
-            advisors will get back to you with personalized guidance.
+            Our expert consultants are ready to guide you through the entire Opportunity Card application process. 
+            Fill out the form below to get started with your personalized consultation.
           </p>
         </div>
 
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
-            <CardTitle>Get in Touch</CardTitle>
+            <CardTitle>Get Expert Help</CardTitle>
             <CardDescription>
-              Fill out the form below and we'll help with your Opportunity Card application
+              Fill out the form below and our consultants will prepare a tailored plan for your application
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -414,16 +433,43 @@ export const ContactForm = () => {
                   />
                 </div>
 
+                {/* Consultancy Package */}
+                <div className="space-y-4">
+                  <h3 className="font-medium text-lg border-b pb-2">Consultancy Package</h3>
+                  <FormField
+                    control={form.control}
+                    name="consultancyPackage"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Select Preferred Package</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Choose package" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="basic">Basic - Document Review (€249)</SelectItem>
+                            <SelectItem value="standard">Standard - Full Application Support (€499)</SelectItem>
+                            <SelectItem value="premium">Premium - VIP Full Service (€999)</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
                 {/* Message */}
                 <FormField
                   control={form.control}
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Your Message</FormLabel>
+                      <FormLabel>Additional Information</FormLabel>
                       <FormControl>
                         <Textarea 
-                          placeholder="Please provide any additional details about your inquiry..."
+                          placeholder="Please provide any additional details about your situation or specific questions you have..."
                           className="min-h-[120px]"
                           {...field}
                         />
@@ -435,7 +481,7 @@ export const ContactForm = () => {
 
                 <Button type="submit" className="w-full bg-german-red hover:bg-red-700">
                   <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  Request Consultation
                 </Button>
               </form>
             </Form>

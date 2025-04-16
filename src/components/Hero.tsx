@@ -10,6 +10,13 @@ export const Hero = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -18,10 +25,15 @@ export const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat leading-tight mb-4">
               Germany's <span className="text-german-red">Opportunity Card</span> Visa
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
-              Your pathway to working and living in Germany - check your eligibility, 
-              understand the benefits, and calculate your points.
+            <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-lg">
+              Expert consultancy services to guide you through the entire application process. 
+              Let our specialists maximize your chances of success.
             </p>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-8">
+              <p className="font-medium text-gray-800 mb-2">Our consultancy packages start from:</p>
+              <p className="text-2xl font-bold text-german-red">€249</p>
+              <p className="text-sm text-gray-600">Comprehensive application support and guidance</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 variant="default" 
@@ -29,13 +41,14 @@ export const Hero = () => {
                 className="bg-german-red hover:bg-red-700 text-white"
                 onClick={scrollToCalculator}
               >
-                Calculate Your Points
+                Check Your Eligibility
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
+                onClick={scrollToContact}
               >
-                Learn More
+                Request Consultation
               </Button>
             </div>
           </div>

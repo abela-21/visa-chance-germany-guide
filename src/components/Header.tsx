@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
@@ -5,6 +6,14 @@ import { useState } from "react";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="bg-white shadow-sm py-4 sticky top-0 z-50">
@@ -17,19 +26,35 @@ export const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/#skilled-worker" className="font-medium hover:text-german-red transition-colors">
-            Skilled Worker
-          </Link>
-          <Link to="/#requirements" className="font-medium hover:text-german-red transition-colors">
-            Point System
-          </Link>
-          <Link to="/#benefits" className="font-medium hover:text-german-red transition-colors">
+          <button 
+            onClick={() => scrollToSection("benefits")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
             Benefits
-          </Link>
-          <Link to="/#calculator" className="font-medium hover:text-german-red transition-colors">
+          </button>
+          <button 
+            onClick={() => scrollToSection("calculator")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
             Point Calculator
-          </Link>
-          <Button variant="default" className="bg-german-red hover:bg-red-700 text-white">
+          </button>
+          <button 
+            onClick={() => scrollToSection("faq")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            FAQ
+          </button>
+          <button 
+            onClick={() => scrollToSection("contact")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            Contact
+          </button>
+          <Button 
+            onClick={() => scrollToSection("contact")} 
+            variant="default" 
+            className="bg-german-red hover:bg-red-700 text-white"
+          >
             Get Started
           </Button>
         </nav>
@@ -47,38 +72,34 @@ export const Header = () => {
       {mobileMenuOpen && (
         <nav className="md:hidden py-4 px-4 bg-white border-t">
           <div className="flex flex-col space-y-3">
-            <Link 
-              to="/#skilled-worker" 
-              className="font-medium px-4 py-2 hover:bg-gray-100 rounded"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Skilled Worker
-            </Link>
-            <Link 
-              to="/#requirements" 
-              className="font-medium px-4 py-2 hover:bg-gray-100 rounded"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Point System
-            </Link>
-            <Link 
-              to="/#benefits" 
-              className="font-medium px-4 py-2 hover:bg-gray-100 rounded"
-              onClick={() => setMobileMenuOpen(false)}
+            <button 
+              onClick={() => scrollToSection("benefits")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
             >
               Benefits
-            </Link>
-            <Link 
-              to="/#calculator" 
-              className="font-medium px-4 py-2 hover:bg-gray-100 rounded"
-              onClick={() => setMobileMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => scrollToSection("calculator")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
             >
               Point Calculator
-            </Link>
+            </button>
+            <button 
+              onClick={() => scrollToSection("faq")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
+            >
+              FAQ
+            </button>
+            <button 
+              onClick={() => scrollToSection("contact")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
+            >
+              Contact
+            </button>
             <Button 
+              onClick={() => scrollToSection("contact")} 
               variant="default" 
               className="bg-german-red hover:bg-red-700 text-white w-full"
-              onClick={() => setMobileMenuOpen(false)}
             >
               Get Started
             </Button>

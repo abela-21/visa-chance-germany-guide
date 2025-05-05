@@ -6,6 +6,7 @@ import { SkilledWorker } from "@/components/SkilledWorker";
 import { Requirements } from "@/components/Requirements";
 import { Benefits } from "@/components/Benefits";
 import { PointCalculator } from "@/components/PointCalculator";
+import { FAQ } from "@/components/FAQ";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 
@@ -21,6 +22,7 @@ const Index = () => {
       </div>
       <Benefits />
       <PointCalculator />
+      <FAQ />
       <ContactForm />
       <Footer />
     </div>

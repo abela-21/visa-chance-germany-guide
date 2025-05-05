@@ -27,16 +27,22 @@ export const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <button 
+            onClick={() => scrollToSection("eligibility")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            Eligibility
+          </button>
+          <button 
+            onClick={() => scrollToSection("application")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            Application Process
+          </button>
+          <button 
             onClick={() => scrollToSection("benefits")} 
             className="font-medium hover:text-german-red transition-colors"
           >
             Benefits
-          </button>
-          <button 
-            onClick={() => scrollToSection("calculator")} 
-            className="font-medium hover:text-german-red transition-colors"
-          >
-            Point Calculator
           </button>
           <button 
             onClick={() => scrollToSection("faq")} 
@@ -67,16 +73,22 @@ export const Header = () => {
         <nav className="md:hidden py-4 px-4 bg-white border-t">
           <div className="flex flex-col space-y-3">
             <button 
+              onClick={() => scrollToSection("eligibility")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
+            >
+              Eligibility
+            </button>
+            <button 
+              onClick={() => scrollToSection("application")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
+            >
+              Application Process
+            </button>
+            <button 
               onClick={() => scrollToSection("benefits")} 
               className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
             >
               Benefits
-            </button>
-            <button 
-              onClick={() => scrollToSection("calculator")} 
-              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
-            >
-              Point Calculator
             </button>
             <button 
               onClick={() => scrollToSection("faq")} 

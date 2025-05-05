@@ -17,10 +17,10 @@ export const Hero = () => {
     }
   };
 
-  const scrollToBenefits = () => {
-    const benefitsSection = document.getElementById("benefits");
-    if (benefitsSection) {
-      benefitsSection.scrollIntoView({ behavior: "smooth" });
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -61,7 +61,7 @@ export const Hero = () => {
             <div className="mt-4">
               <Button 
                 variant="link" 
-                onClick={scrollToBenefits}
+                onClick={scrollToContact}
                 className="text-german-red"
               >
                 Request Consultation

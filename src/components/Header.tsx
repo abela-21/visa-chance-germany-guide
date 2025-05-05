@@ -31,23 +31,13 @@ export const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          {/* Eligibility Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center font-medium hover:text-german-red transition-colors">
-              Eligibility <ChevronDown className="h-4 w-4 ml-1" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => scrollToSection("eligibility")}>
-                Overview
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => scrollToSection("skilled-worker")}>
-                Skilled Worker Route
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => scrollToSection("point-system")}>
-                Point System Route
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {/* Eligibility - No longer a dropdown */}
+          <button 
+            onClick={() => scrollToSection("eligibility")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            Eligibility
+          </button>
 
           {/* Application Process */}
           <button 

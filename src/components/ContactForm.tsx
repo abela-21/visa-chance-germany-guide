@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +14,8 @@ import {
 } from "@/components/ui/select";
 
 export const ContactForm = () => {
+  const [areaOfStudy, setAreaOfStudy] = useState<string>("");
+  
   return (
     <section id="contact" className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -78,7 +81,7 @@ export const ContactForm = () => {
                   <label htmlFor="area-of-study" className="text-sm font-medium">
                     Area of Study
                   </label>
-                  <Select>
+                  <Select onValueChange={(value) => setAreaOfStudy(value)}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select your area of study" />
                     </SelectTrigger>
@@ -91,6 +94,19 @@ export const ContactForm = () => {
                       <SelectItem value="other">Other (please specify)</SelectItem>
                     </SelectContent>
                   </Select>
+                  
+                  {areaOfStudy === "other" && (
+                    <div className="mt-2">
+                      <Input placeholder="Please specify your area of study" />
+                    </div>
+                  )}
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="degree-location" className="text-sm font-medium">
+                    Where was your degree acquired?
+                  </label>
+                  <Input id="degree-location" placeholder="University/Institution and Country" />
                 </div>
                 
                 <div className="space-y-2">

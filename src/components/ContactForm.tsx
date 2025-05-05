@@ -4,6 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Mail, Phone, Linkedin, Facebook, Instagram } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export const ContactForm = () => {
   return (
@@ -23,47 +30,124 @@ export const ContactForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="first-name" className="text-sm font-medium">
-                      First Name
+                      First Name <span className="text-german-red">*</span>
                     </label>
-                    <Input id="first-name" placeholder="John" />
+                    <Input id="first-name" placeholder="John" required />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="last-name" className="text-sm font-medium">
-                      Last Name
+                      Last Name <span className="text-german-red">*</span>
                     </label>
-                    <Input id="last-name" placeholder="Doe" />
+                    <Input id="last-name" placeholder="Doe" required />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
-                    Email
+                    Email <span className="text-german-red">*</span>
                   </label>
-                  <Input id="email" type="email" placeholder="john.doe@example.com" />
+                  <Input id="email" type="email" placeholder="john.doe@example.com" required />
                 </div>
                 
                 <div className="space-y-2">
                   <label htmlFor="phone" className="text-sm font-medium">
-                    Phone
+                    Phone <span className="text-german-red">*</span>
                   </label>
-                  <Input id="phone" placeholder="+1 (555) 000-0000" />
+                  <Input id="phone" placeholder="+1 (555) 000-0000" required />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
-                    Subject
+                  <label htmlFor="education" className="text-sm font-medium">
+                    Education Level
                   </label>
-                  <Input id="subject" placeholder="Opportunity Card Inquiry" />
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your education level" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="high-school">High School Diploma</SelectItem>
+                      <SelectItem value="bachelor">Bachelor's Degree</SelectItem>
+                      <SelectItem value="master">Master's Degree</SelectItem>
+                      <SelectItem value="phd">PhD</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="area-of-study" className="text-sm font-medium">
+                    Area of Study
+                  </label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your area of study" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="it">IT</SelectItem>
+                      <SelectItem value="engineering">Engineering</SelectItem>
+                      <SelectItem value="business">Business</SelectItem>
+                      <SelectItem value="economics">Economics & Finance</SelectItem>
+                      <SelectItem value="law">Law</SelectItem>
+                      <SelectItem value="other">Other (please specify)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="work-experience" className="text-sm font-medium">
+                    Work Experience in Field
+                  </label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your work experience" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="0-2">0 - 2 years</SelectItem>
+                      <SelectItem value="3-5">3 - 5 years</SelectItem>
+                      <SelectItem value="5+">Above 5 years</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="english-skill" className="text-sm font-medium">
+                    English Language Skill
+                  </label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your English proficiency" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="beginner">Beginner</SelectItem>
+                      <SelectItem value="advanced">Advanced</SelectItem>
+                      <SelectItem value="fluent">Fluent</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div className="space-y-2">
+                  <label htmlFor="german-skill" className="text-sm font-medium">
+                    German Language Skill
+                  </label>
+                  <Select>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select your German proficiency" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="beginner">Beginner</SelectItem>
+                      <SelectItem value="advanced">Advanced</SelectItem>
+                      <SelectItem value="fluent">Fluent</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
-                    Message
+                    Note
                   </label>
                   <Textarea 
                     id="message" 
-                    placeholder="Please provide details about your inquiry..." 
+                    placeholder="Any additional information you'd like to share..." 
                     className="min-h-[120px]"
                   />
                 </div>

@@ -1,8 +1,13 @@
 
-import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
-import { Menu } from "lucide-react";
 import { useState } from "react";
+import { Button } from "./ui/button";
+import { Menu, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,30 +31,56 @@ export const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <button 
-            onClick={() => scrollToSection("eligibility")} 
-            className="font-medium hover:text-german-red transition-colors"
-          >
-            Eligibility
-          </button>
+          {/* Eligibility Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center font-medium hover:text-german-red transition-colors">
+              Eligibility <ChevronDown className="h-4 w-4 ml-1" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem onClick={() => scrollToSection("eligibility")}>
+                Overview
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => scrollToSection("skilled-worker")}>
+                Skilled Worker Route
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => scrollToSection("point-system")}>
+                Point System Route
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/* Application Process */}
           <button 
             onClick={() => scrollToSection("application")} 
             className="font-medium hover:text-german-red transition-colors"
           >
             Application Process
           </button>
+
+          {/* Services */}
+          <button 
+            onClick={() => scrollToSection("services")} 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            Our Services
+          </button>
+
+          {/* Benefits */}
           <button 
             onClick={() => scrollToSection("benefits")} 
             className="font-medium hover:text-german-red transition-colors"
           >
             Benefits
           </button>
+
+          {/* FAQ */}
           <button 
             onClick={() => scrollToSection("faq")} 
             className="font-medium hover:text-german-red transition-colors"
           >
             FAQ
           </button>
+
           <Button 
             onClick={() => scrollToSection("contact")} 
             variant="default" 
@@ -83,6 +114,12 @@ export const Header = () => {
               className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
             >
               Application Process
+            </button>
+            <button 
+              onClick={() => scrollToSection("services")} 
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
+            >
+              Our Services
             </button>
             <button 
               onClick={() => scrollToSection("benefits")} 

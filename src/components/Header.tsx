@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Menu, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,16 +30,25 @@ export const Header = () => {
     <header className="bg-white shadow-sm py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 
-            onClick={scrollToTop}
+          <Link 
+            to="/"
             className="text-2xl font-bold font-montserrat text-german-dark flex items-center gap-2 cursor-pointer hover:text-german-red transition-colors"
+            onClick={scrollToTop}
           >
-            <span className="text-german-red">Chance</span>Up
-          </h1>
+            <img src="/logo.svg" alt="ChanceUp Logo" className="h-8 w-auto" />
+            <span><span className="text-german-red">Chance</span>Up</span>
+          </Link>
         </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
+          <Link 
+            to="/about" 
+            className="font-medium hover:text-german-red transition-colors"
+          >
+            About Us
+          </Link>
+
           {/* Eligibility - No longer a dropdown */}
           <button 
             onClick={() => scrollToSection("eligibility")} 
@@ -101,6 +111,13 @@ export const Header = () => {
       {mobileMenuOpen && (
         <nav className="md:hidden py-4 px-4 bg-white border-t">
           <div className="flex flex-col space-y-3">
+            <Link 
+              to="/about"
+              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About Us
+            </Link>
             <button 
               onClick={() => scrollToSection("eligibility")} 
               className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"

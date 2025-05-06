@@ -72,11 +72,20 @@ export const Hero = () => {
             <div className="relative">
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-german-gold opacity-50 rounded-full"></div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-german-red opacity-50 rounded-full"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1440&q=80" 
-                alt="German flag and Brandenburg Gate" 
-                className="rounded-lg shadow-lg relative z-10 object-cover h-72 w-full md:h-96"
-              />
+              <div className="relative z-10 bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
+                <img 
+                  src="/logo.svg" 
+                  alt="ChanceUp Logo" 
+                  className="w-24 h-24 mb-4"
+                />
+                <h2 className="text-2xl font-bold mb-2"><span className="text-german-red">Chance</span>Up</h2>
+                <p className="text-center text-gray-600">Your trusted partner for German immigration</p>
+                <img 
+                  src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1440&q=80" 
+                  alt="German flag and Brandenburg Gate" 
+                  className="rounded-lg shadow-lg mt-6 w-full h-48 object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -81,14 +81,6 @@ export const Header = () => {
             Benefits
           </button>
 
-          {/* FAQ */}
-          <button 
-            onClick={() => scrollToSection("faq")} 
-            className="font-medium hover:text-german-red transition-colors"
-          >
-            FAQ
-          </button>
-
           <Button 
             onClick={() => scrollToSection("contact")} 
             variant="default" 
@@ -142,12 +134,6 @@ export const Header = () => {
             >
               Benefits
             </button>
-            <button 
-              onClick={() => scrollToSection("faq")} 
-              className="font-medium px-4 py-2 hover:bg-gray-100 rounded text-left"
-            >
-              FAQ
-            </button>
             <Button 
               onClick={() => scrollToSection("contact")} 
               variant="default" 
@@ -161,3 +147,4 @@ export const Header = () => {
     </header>
   );
 };
+

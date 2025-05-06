@@ -20,12 +20,20 @@ export const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setMobileMenuOpen(false);
+  };
+
   return (
     <header className="bg-white shadow-sm py-4 sticky top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold font-montserrat text-german-dark flex items-center gap-2">
-            <span className="text-german-red">Opportunity</span>Card
+          <h1 
+            onClick={scrollToTop}
+            className="text-2xl font-bold font-montserrat text-german-dark flex items-center gap-2 cursor-pointer hover:text-german-red transition-colors"
+          >
+            <span className="text-german-red">Chance</span>Up
           </h1>
         </div>
         

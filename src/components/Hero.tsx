@@ -30,7 +30,7 @@ export const Hero = () => {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-montserrat leading-tight mb-4">
-              Germany's <span className="text-german-red">Opportunity Card</span> Visa
+              Germany's <span className="text-german-red">ChanceUp</span> Visa
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-6 max-w-lg">
               Expert consultancy services to guide you through the entire application process. 
